@@ -66,7 +66,7 @@ function (_Component) {
         style: styles.post,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 13
         },
         __self: this
       }, this.props.images ? this.props.images.map(function (image) {
@@ -76,7 +76,7 @@ function (_Component) {
           src: image.url,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 15
+            lineNumber: 16
           },
           __self: this
         });
@@ -84,14 +84,15 @@ function (_Component) {
         style: styles.content,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 20
         },
         __self: this
       }, __jsx("ul", {
+        className: "tags",
         style: styles.tags,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 21
         },
         __self: this
       }, this.props.tags.map(function (tag) {
@@ -100,20 +101,38 @@ function (_Component) {
           key: tag + _this2.props.id,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 23
+            lineNumber: 24
           },
           __self: this
         }, tag);
       })), __jsx("h2", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 27
+        style: {
+          textAlign: 'center',
+          marginBottom: '-5px',
+          fontSize: '2em'
         },
-        __self: this
-      }, this.state.title), __jsx("p", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 28
+        },
+        __self: this
+      }, this.state.title), __jsx("p", {
+        style: {
+          textAlign: 'center',
+          color: '#8c8c8c'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        },
+        __self: this
+      }, this.props.date), __jsx("p", {
+        style: {
+          textAlign: 'center'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
         },
         __self: this
       }, this.state.content)));
@@ -128,13 +147,15 @@ var styles = {
   tags: {
     display: 'flex',
     listStyle: 'none',
+    marginLeft: '-40px',
+    fontSize: '12px',
     justifyContent: 'center',
-    marginLeft: '-40px'
+    marginBottom: '-5px'
   },
   tag: {
     padding: '5px 20px',
     margin: '0 10px',
-    borderRadius: '3px',
+    borderRadius: '2px',
     backgroundColor: '#F8054D',
     color: 'white'
   },
@@ -241,17 +262,20 @@ var styles = {
     background: 'url(https://i.imgur.com/k5x66M5.jpg)',
     backgroundRepeat: "no-repeat",
     backgroundSize: 'cover',
-    backgroundPosition: 'center'
+    backgroundPosition: 'center',
+    borderRadius: '5px'
   },
   header: {
     width: '100%',
     height: '25em',
     marginBottom: '3em',
     textAlign: 'center',
-    background: 'rgba(0,0,0,0.8)'
+    background: 'rgba(0,0,0,0.8)',
+    borderRadius: '5px'
   },
   picture: {
     width: '10em',
+    height: '10em',
     marginTop: '4.5em',
     borderRadius: '50%',
     padding: '10px',
@@ -12247,6 +12271,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 
 
+var date = new Date();
 
 var index =
 /*#__PURE__*/
@@ -12263,10 +12288,6 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return __jsx("div", {
-        style: {
-          overflow: 'hidden',
-          borderRadius: '5px'
-        },
         className: "jsx-481072388",
         __source: {
           fileName: _jsxFileName,
@@ -12307,6 +12328,7 @@ function (_React$Component) {
           content: entry.content,
           images: entry.images,
           tags: entry.tags.split(" "),
+          date: date.toDateString(),
           __source: {
             fileName: _jsxFileName,
             lineNumber: 31
@@ -12316,7 +12338,7 @@ function (_React$Component) {
       })), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_7___default.a, {
         id: "481072388",
         __self: this
-      }, "@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');*.jsx-481072388{font-family:'Poppins',sans-serif;margin:0;padding:0;}.postsContainer.jsx-481072388{width:50vw;margin:auto;}@media (max-width:950px){.post.jsx-481072388 img.jsx-481072388{width:90vw;}.post.jsx-481072388{width:90vw;}.postsContainer.jsx-481072388{width:90vw;}}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcb21hcmVcXERlc2t0b3BcXGJsb2dcXHBhZ2VzXFxpbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUEwQ29CLEFBRW9GLEFBR3ZDLEFBTXZCLEFBTUUsQUFJQSxBQUlBLFdBYkQsQUFNWixBQUlBLEFBSUEsWUFiRixVQVBXLFNBQ0MsVUFDWiIsImZpbGUiOiJDOlxcVXNlcnNcXG9tYXJlXFxEZXNrdG9wXFxibG9nXFxwYWdlc1xcaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgTGluayBmcm9tICduZXh0L2xpbmsnXG5pbXBvcnQgSGVhZCBmcm9tICduZXh0L2hlYWQnXG5pbXBvcnQgRW50cnkgZnJvbSAnLi4vY29tcG9uZW50cy9FbnRyeSdcbmltcG9ydCBIZWFkZXIgZnJvbSAnLi4vY29tcG9uZW50cy9IZWFkZXInXG5cbmltcG9ydCAnaXNvbW9ycGhpYy11bmZldGNoJ1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBpbmRleCBleHRlbmRzIFJlYWN0LkNvbXBvbmVudCB7XG5cbiAgc3RhdGljIGFzeW5jIGdldEluaXRpYWxQcm9wcygpIHtcbiAgICBsZXQgcmVzID0gYXdhaXQgZmV0Y2goJ2h0dHBzOi8vb21hcmVkdS5naXRodWIuaW8vYmxvZ3MvZW50cmllcy5qc29uJylcbiAgICBsZXQgZW50cmllc09iaiA9IGF3YWl0IHJlcy5qc29uKClcbiAgICByZXR1cm4geyBlbnRyaWVzOiBlbnRyaWVzT2JqIH1cbiAgfVxuXG5cbiAgcmVuZGVyKCkge1xuICAgIHJldHVybiAoXG4gICAgICA8ZGl2IHN0eWxlPXt7IG92ZXJmbG93OiAnaGlkZGVuJywgYm9yZGVyUmFkaXVzOiAnNXB4JyB9fT5cbiAgICAgICAgPEhlYWQ+XG4gICAgICAgICAgPHRpdGxlPk9tYXJlZHUgfCBCbG9nPC90aXRsZT5cblxuICAgICAgICA8L0hlYWQ+XG5cbiAgICAgICAgPEhlYWRlciAvPlxuXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwicG9zdHNDb250YWluZXJcIj5cbiAgICAgICAgICB7XG4gICAgICAgICAgICB0aGlzLnByb3BzLmVudHJpZXMubWFwKGVudHJ5ID0+XG4gICAgICAgICAgICAgIDxFbnRyeVxuICAgICAgICAgICAgICAgIGlkPXtlbnRyeS5pZH1cbiAgICAgICAgICAgICAgICBrZXk9e2VudHJ5LmlkfVxuICAgICAgICAgICAgICAgIHRpdGxlPXtlbnRyeS50aXRsZX1cbiAgICAgICAgICAgICAgICBjb250ZW50PXtlbnRyeS5jb250ZW50fVxuICAgICAgICAgICAgICAgIGltYWdlcz17ZW50cnkuaW1hZ2VzfVxuICAgICAgICAgICAgICAgIHRhZ3M9e2VudHJ5LnRhZ3Muc3BsaXQoXCIgXCIpfVxuICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgKVxuICAgICAgICAgIH1cbiAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICBAaW1wb3J0IHVybCgnaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PVBvcHBpbnMmZGlzcGxheT1zd2FwJyk7XG5cbiAgICAgICAgKiB7XG4gICAgICAgICAgZm9udC1mYW1pbHk6ICdQb3BwaW5zJywgc2Fucy1zZXJpZjtcbiAgICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgfVxuXG4gICAgICAgIC5wb3N0c0NvbnRhaW5lciB7XG4gICAgICAgICAgd2lkdGg6IDUwdnc7XG4gICAgICAgICAgbWFyZ2luOiBhdXRvO1xuICAgICAgICB9XG5cbiAgICAgICAgQG1lZGlhIChtYXgtd2lkdGg6IDk1MHB4KSB7XG4gICAgICAgICAgLnBvc3QgaW1nIHtcbiAgICAgICAgICAgIHdpZHRoOiA5MHZ3O1xuICAgICAgICAgIH1cblxuICAgICAgICAgIC5wb3N0IHtcbiAgICAgICAgICAgIHdpZHRoOiA5MHZ3O1xuICAgICAgICAgIH1cblxuICAgICAgICAgIC5wb3N0c0NvbnRhaW5lciB7XG4gICAgICAgICAgICB3aWR0aDogOTB2dztcbiAgICAgICAgICB9XG4gICAgICAgIH1cblxuICAgIGB9PC9zdHlsZT5cblxuICAgICAgPC9kaXY+XG4gICAgKVxuICB9XG59XG5cbiJdfQ== */\n/*@ sourceURL=C:\\Users\\omare\\Desktop\\blog\\pages\\index.js */"));
+      }, "@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');*.jsx-481072388{font-family:'Poppins',sans-serif;margin:0;padding:0;}.postsContainer.jsx-481072388{width:50vw;margin:auto;}@media (max-width:950px){.post.jsx-481072388 img.jsx-481072388{width:90vw;}.post.jsx-481072388{width:90vw;}.postsContainer.jsx-481072388{width:90vw;}}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcb21hcmVcXERlc2t0b3BcXGJsb2dcXHBhZ2VzXFxpbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUEyQ29CLEFBRW9GLEFBR3ZDLEFBTXZCLEFBTUUsQUFJQSxBQUlBLFdBYkQsQUFNWixBQUlBLEFBSUEsWUFiRixVQVBXLFNBQ0MsVUFDWiIsImZpbGUiOiJDOlxcVXNlcnNcXG9tYXJlXFxEZXNrdG9wXFxibG9nXFxwYWdlc1xcaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgTGluayBmcm9tICduZXh0L2xpbmsnXG5pbXBvcnQgSGVhZCBmcm9tICduZXh0L2hlYWQnXG5pbXBvcnQgRW50cnkgZnJvbSAnLi4vY29tcG9uZW50cy9FbnRyeSdcbmltcG9ydCBIZWFkZXIgZnJvbSAnLi4vY29tcG9uZW50cy9IZWFkZXInXG5cbmltcG9ydCAnaXNvbW9ycGhpYy11bmZldGNoJ1xubGV0IGRhdGUgPSBuZXcgRGF0ZSgpXG5cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIGluZGV4IGV4dGVuZHMgUmVhY3QuQ29tcG9uZW50IHtcblxuICBzdGF0aWMgYXN5bmMgZ2V0SW5pdGlhbFByb3BzKCkge1xuICAgIGxldCByZXMgPSBhd2FpdCBmZXRjaCgnaHR0cHM6Ly9vbWFyZWR1LmdpdGh1Yi5pby9ibG9ncy9lbnRyaWVzLmpzb24nKVxuICAgIGxldCBlbnRyaWVzT2JqID0gYXdhaXQgcmVzLmpzb24oKVxuICAgIHJldHVybiB7IGVudHJpZXM6IGVudHJpZXNPYmogfVxuICB9XG5cbiAgcmVuZGVyKCkge1xuICAgIHJldHVybiAoXG4gICAgICA8ZGl2PlxuICAgICAgICA8SGVhZD5cbiAgICAgICAgICA8dGl0bGU+T21hcmVkdSB8IEJsb2c8L3RpdGxlPlxuXG4gICAgICAgIDwvSGVhZD5cblxuICAgICAgICA8SGVhZGVyIC8+XG5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJwb3N0c0NvbnRhaW5lclwiPlxuICAgICAgICAgIHtcbiAgICAgICAgICAgIHRoaXMucHJvcHMuZW50cmllcy5tYXAoZW50cnkgPT5cbiAgICAgICAgICAgICAgPEVudHJ5XG4gICAgICAgICAgICAgICAgaWQ9e2VudHJ5LmlkfVxuICAgICAgICAgICAgICAgIGtleT17ZW50cnkuaWR9XG4gICAgICAgICAgICAgICAgdGl0bGU9e2VudHJ5LnRpdGxlfVxuICAgICAgICAgICAgICAgIGNvbnRlbnQ9e2VudHJ5LmNvbnRlbnR9XG4gICAgICAgICAgICAgICAgaW1hZ2VzPXtlbnRyeS5pbWFnZXN9XG4gICAgICAgICAgICAgICAgdGFncz17ZW50cnkudGFncy5zcGxpdChcIiBcIil9XG4gICAgICAgICAgICAgICAgZGF0ZT17ZGF0ZS50b0RhdGVTdHJpbmcoKX1cbiAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgIClcbiAgICAgICAgICB9XG4gICAgICAgIDwvZGl2PlxuXG4gICAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgICAgQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1Qb3BwaW5zJmRpc3BsYXk9c3dhcCcpO1xuXG4gICAgICAgICoge1xuICAgICAgICAgIGZvbnQtZmFtaWx5OiAnUG9wcGlucycsIHNhbnMtc2VyaWY7XG4gICAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIH1cblxuICAgICAgICAucG9zdHNDb250YWluZXIge1xuICAgICAgICAgIHdpZHRoOiA1MHZ3O1xuICAgICAgICAgIG1hcmdpbjogYXV0bztcbiAgICAgICAgfVxuXG4gICAgICAgIEBtZWRpYSAobWF4LXdpZHRoOiA5NTBweCkge1xuICAgICAgICAgIC5wb3N0IGltZyB7XG4gICAgICAgICAgICB3aWR0aDogOTB2dztcbiAgICAgICAgICB9XG5cbiAgICAgICAgICAucG9zdCB7XG4gICAgICAgICAgICB3aWR0aDogOTB2dztcbiAgICAgICAgICB9XG5cbiAgICAgICAgICAucG9zdHNDb250YWluZXIge1xuICAgICAgICAgICAgd2lkdGg6IDkwdnc7XG4gICAgICAgICAgfVxuICAgICAgICB9XG5cbiAgICBgfTwvc3R5bGU+XG5cbiAgICAgIDwvZGl2PlxuICAgIClcbiAgfVxufVxuXG4iXX0= */\n/*@ sourceURL=C:\\Users\\omare\\Desktop\\blog\\pages\\index.js */"));
     }
   }], [{
     key: "getInitialProps",
